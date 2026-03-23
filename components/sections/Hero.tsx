@@ -4,9 +4,7 @@ import Image from 'next/image'
 export default function Hero() {
   return (
     <section className="min-h-screen flex flex-col">
-      {/* Full-screen image hero */}
       <div className="relative flex-1 flex flex-col justify-center items-center text-center px-6 pt-14 min-h-screen">
-        {/* Background image */}
         <Image
           src="/car-carrier.jpg"
           alt="車積載トラック"
@@ -14,10 +12,8 @@ export default function Hero() {
           priority
           className="object-cover object-center"
         />
-        {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/55" />
 
-        {/* Content */}
         <div className="relative z-10 flex flex-col items-center">
           <p className="font-noto text-xs text-white/60 tracking-widest uppercase mb-6">
             千葉県佐倉市 — 中古車買取・販売
@@ -43,9 +39,9 @@ export default function Hero() {
           {/* Stats */}
           <div className="mt-20 grid grid-cols-3 gap-8 md:gap-16 border-t border-white/20 pt-10 w-full max-w-xl">
             {[
-              { num: '毎日', label: '年中無休営業' },
+              { num: '月〜土', label: '年末年始除く' },
               { num: '9-17', label: '営業時間' },
-              { num: '即日', label: '査定対応' },
+              { num: '無料', label: 'お見積り' },
             ].map((s) => (
               <div key={s.label} className="text-center">
                 <p className="font-bebas text-2xl md:text-3xl tracking-widest text-white">{s.num}</p>
@@ -55,7 +51,6 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Scroll hint */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
           <span className="font-noto text-xs text-white/40 tracking-widest">SCROLL</span>
           <span className="block w-px h-8 bg-white/20" />

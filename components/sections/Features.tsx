@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 const features = [
   {
     en: 'HIGH VALUE',
@@ -21,28 +23,35 @@ const features = [
 
 export default function Features() {
   return (
-    <section className="py-32 bg-[#f5f5f7]">
-      <div className="max-w-6xl mx-auto px-6 md:px-10">
-        {/* Section header */}
+    <section className="relative py-32">
+      {/* Background image */}
+      <Image
+        src="/excavator.jpg"
+        alt=""
+        fill
+        className="object-cover object-center"
+      />
+      <div className="absolute inset-0 bg-black/75" />
+
+      <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-10">
         <div className="mb-16 text-center">
-          <p className="font-noto text-xs text-[#6e6e73] tracking-widest uppercase mb-3">サービスの特徴</p>
-          <h2 className="font-bebas text-4xl md:text-6xl tracking-widest text-[#1d1d1f]">WHY CHOOSE US</h2>
+          <p className="font-noto text-xs text-white/40 tracking-widest uppercase mb-3">サービスの特徴</p>
+          <h2 className="font-bebas text-4xl md:text-6xl tracking-widest text-white">WHY CHOOSE US</h2>
         </div>
 
-        {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {features.map((feature) => (
-            <div key={feature.en} className="bg-white p-10 flex flex-col gap-5">
-              <span className="font-bebas text-4xl text-[#d2d2d7] tracking-widest leading-none">
+            <div key={feature.en} className="bg-white/10 backdrop-blur-sm border border-white/20 p-10 flex flex-col gap-5">
+              <span className="font-bebas text-4xl text-white/20 tracking-widest leading-none">
                 {feature.number}
               </span>
               <div>
-                <h3 className="font-bebas text-2xl tracking-widest text-[#1d1d1f] leading-none">
+                <h3 className="font-bebas text-2xl tracking-widest text-white leading-none">
                   {feature.en}
                 </h3>
-                <p className="font-noto text-xs text-[#6e6e73] mt-1">{feature.ja}</p>
+                <p className="font-noto text-xs text-white/50 mt-1">{feature.ja}</p>
               </div>
-              <p className="font-noto text-sm text-[#6e6e73] leading-relaxed">{feature.desc}</p>
+              <p className="font-noto text-sm text-white/70 leading-relaxed">{feature.desc}</p>
             </div>
           ))}
         </div>
