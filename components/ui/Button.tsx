@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 type ButtonProps = {
-  variant?: 'solid' | 'outline'
+  variant?: 'solid' | 'outline' | 'outline-white' | 'ghost'
   children: React.ReactNode
   href?: string
   onClick?: () => void
@@ -10,33 +10,20 @@ type ButtonProps = {
   className?: string
 }
 
-const baseClass =
-  'inline-block font-inter font-black tracking-widest text-sm uppercase px-8 py-4 transition-colors duration-200 cursor-pointer'
+const baseClass = 'inline-block font-noto text-sm transition-colors duration-200 cursor-pointer'
 
 const variantClass = {
-  solid:
-    'bg-[#0a0a0a] text-white border border-[#0a0a0a] hover:bg-white hover:text-[#0a0a0a]',
-  outline:
-    'bg-transparent text-[#0a0a0a] border border-[#0a0a0a] hover:bg-[#0a0a0a] hover:text-white',
+  solid:   'bg-[#1d1d1f] text-white px-7 py-3 hover:bg-[#3d3d3f]',
+  outline:       'bg-transparent text-[#1d1d1f] border border-[#1d1d1f] px-7 py-3 hover:bg-[#1d1d1f] hover:text-white',
+  'outline-white': 'bg-transparent text-white border border-white px-7 py-3 hover:bg-white hover:text-[#1d1d1f]',
+  ghost:         'bg-transparent text-[#1d1d1f] underline-offset-4 hover:underline px-0 py-0',
 }
 
-export default function Button({
-  variant = 'outline',
-  children,
-  href,
-  onClick,
-  type = 'button',
-  disabled,
-  className = '',
-}: ButtonProps) {
+export default function Button({ variant = 'solid', children, href, onClick, type = 'button', disabled, className = '' }: ButtonProps) {
   const classes = `${baseClass} ${variantClass[variant]} ${className} ${disabled ? 'opacity-40 cursor-not-allowed' : ''}`
 
   if (href) {
-    return (
-      <Link href={href} className={classes}>
-        {children}
-      </Link>
-    )
+    return <Link href={href} className={classes}>{children}</Link>
   }
 
   return (

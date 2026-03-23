@@ -21,33 +21,28 @@ const features = [
 
 export default function Features() {
   return (
-    <section className="py-32 bg-white border-b border-black/10">
-      <div className="max-w-7xl mx-auto px-8 md:px-16">
-        <p className="font-inter text-xs tracking-widest text-black/30 uppercase mb-12">
-          WHY CHOOSE US
-        </p>
+    <section className="py-32 bg-[#f5f5f7]">
+      <div className="max-w-6xl mx-auto px-6 md:px-10">
+        {/* Section header */}
+        <div className="mb-16 text-center">
+          <p className="font-noto text-xs text-[#6e6e73] tracking-widest uppercase mb-3">サービスの特徴</p>
+          <h2 className="font-bebas text-4xl md:text-6xl tracking-widest text-[#1d1d1f]">WHY CHOOSE US</h2>
+        </div>
 
-        {/* Cards: gap-px + bg-black/10 = thin border between cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-black/10 border border-black/10">
+        {/* Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {features.map((feature) => (
-            <div
-              key={feature.en}
-              className="bg-white p-10 md:p-12 flex flex-col gap-6"
-            >
-              <span className="font-inter text-xs text-black/20 tracking-widest">
+            <div key={feature.en} className="bg-white p-10 flex flex-col gap-5">
+              <span className="font-bebas text-4xl text-[#d2d2d7] tracking-widest leading-none">
                 {feature.number}
               </span>
               <div>
-                <h3 className="font-bebas text-3xl md:text-4xl tracking-widest text-[#0a0a0a] leading-none">
+                <h3 className="font-bebas text-2xl tracking-widest text-[#1d1d1f] leading-none">
                   {feature.en}
                 </h3>
-                <p className="font-noto font-bold text-sm text-black/40 mt-1 tracking-wider">
-                  {feature.ja}
-                </p>
+                <p className="font-noto text-xs text-[#6e6e73] mt-1">{feature.ja}</p>
               </div>
-              <p className="font-noto text-sm text-black/60 leading-relaxed">
-                {feature.desc}
-              </p>
+              <p className="font-noto text-sm text-[#6e6e73] leading-relaxed">{feature.desc}</p>
             </div>
           ))}
         </div>

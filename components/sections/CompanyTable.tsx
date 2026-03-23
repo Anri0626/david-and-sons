@@ -8,26 +8,16 @@ const rows = [
 
 export default function CompanyTable() {
   return (
-    <dl className="border-t border-black/10">
+    <dl>
       {rows.map((row) => (
-        <div
-          key={row.label}
-          className="flex flex-col sm:flex-row py-6 border-b border-black/10 gap-2 sm:gap-8"
-        >
-          <dt className="font-inter text-xs text-black/30 tracking-widest uppercase w-32 shrink-0 pt-0.5">
-            {row.label}
-          </dt>
-          <dd className="font-noto font-bold text-base md:text-lg text-[#0a0a0a]">
+        <div key={row.label} className="flex flex-col sm:flex-row py-6 border-b border-[#d2d2d7] gap-2 sm:gap-12">
+          <dt className="font-noto text-xs text-[#6e6e73] w-28 shrink-0 pt-0.5">{row.label}</dt>
+          <dd className="font-noto text-sm md:text-base text-[#1d1d1f]">
             {row.isPhone ? (
-              <a
-                href={`tel:${row.value.replace(/-/g, '')}`}
-                className="hover:text-black/50 transition-colors"
-              >
+              <a href={`tel:${row.value.replace(/-/g, '')}`} className="hover:text-[#6e6e73] transition-colors">
                 {row.value}
               </a>
-            ) : (
-              row.value
-            )}
+            ) : row.value}
           </dd>
         </div>
       ))}
