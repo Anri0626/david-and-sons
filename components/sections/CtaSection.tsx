@@ -40,6 +40,15 @@ export default function CtaSection() {
             >
               090-5781-8564
             </a>
+            <p className="font-noto text-xs text-white/40 mt-1">携帯電話</p>
+            <a
+              href="tel:0433085783"
+              className="block font-bebas tracking-widest text-white hover:text-white/70 transition-colors mt-3"
+              style={{ fontSize: 'clamp(1.5rem, 4vw, 2.5rem)' }}
+            >
+              043-308-5783
+            </a>
+            <p className="font-noto text-xs text-white/40 mt-1">TEL / FAX</p>
             <p className="font-noto text-xs text-white/50 mt-3">受付時間：月〜土 9:00〜17:00（年末年始除く）</p>
             <div className="mt-8 pt-8 border-t border-white/20">
               <p className="font-noto text-xs text-white/40">所在地</p>

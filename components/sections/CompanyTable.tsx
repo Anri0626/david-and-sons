@@ -2,8 +2,9 @@ const rows = [
   { label: '会社名',   value: "DAVID AND SON'S 合同会社" },
   { label: '事業内容', value: '中古車買取・販売、廃車買取' },
   { label: '所在地',   value: '千葉県佐倉市高崎944-1' },
-  { label: '電話番号', value: '090-5781-8564', isPhone: true },
-  { label: '営業時間', value: '毎日 9:00〜17:00' },
+  { label: '携帯電話', value: '090-5781-8564', isPhone: true },
+  { label: 'TEL / FAX', value: '043-308-5783', isPhone: true },
+  { label: '営業時間', value: '月〜土 9:00〜17:00（年末年始除く）' },
 ]
 
 export default function CompanyTable() {

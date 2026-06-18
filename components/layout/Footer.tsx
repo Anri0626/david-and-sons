@@ -28,9 +28,12 @@ export default function Footer() {
             <div className="space-y-2">
               <p className="font-noto text-xs text-[#6e6e73]">千葉県佐倉市高崎944-1</p>
               <a href="tel:09057818564" className="block font-noto text-xs text-[#1d1d1f] hover:text-[#6e6e73] transition-colors">
-                090-5781-8564
+                携帯：090-5781-8564
               </a>
-              <p className="font-noto text-xs text-[#6e6e73]">毎日 9:00〜17:00</p>
+              <a href="tel:0433085783" className="block font-noto text-xs text-[#1d1d1f] hover:text-[#6e6e73] transition-colors">
+                TEL/FAX：043-308-5783
+              </a>
+              <p className="font-noto text-xs text-[#6e6e73]">月〜土 9:00〜17:00（年末年始除く）</p>
             </div>
           </div>
 

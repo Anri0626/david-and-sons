@@ -25,11 +25,16 @@ export default function ContactPage() {
           <div className="md:col-span-1">
             <div className="space-y-8">
               <div>
-                <p className="font-noto text-xs text-[#6e6e73] tracking-widest uppercase mb-3">電話</p>
+                <p className="font-noto text-xs text-[#6e6e73] tracking-widest uppercase mb-3">携帯電話</p>
                 <a href="tel:09057818564" className="font-bebas text-2xl tracking-widest text-[#1d1d1f] hover:text-[#6e6e73] transition-colors">
                   090-5781-8564
                 </a>
-                <p className="font-noto text-xs text-[#6e6e73] mt-1">毎日 9:00〜17:00</p>
+              </div>
+              <div className="border-t border-[#d2d2d7] pt-8">
+                <p className="font-noto text-xs text-[#6e6e73] tracking-widest uppercase mb-3">TEL / FAX</p>
+                <a href="tel:0433085783" className="font-bebas text-2xl tracking-widest text-[#1d1d1f] hover:text-[#6e6e73] transition-colors">
+                  043-308-5783
+                </a>
               </div>
               <div className="border-t border-[#d2d2d7] pt-8">
                 <p className="font-noto text-xs text-[#6e6e73] tracking-widest uppercase mb-3">所在地</p>
@@ -37,8 +42,8 @@ export default function ContactPage() {
               </div>
               <div className="border-t border-[#d2d2d7] pt-8">
                 <p className="font-noto text-xs text-[#6e6e73] tracking-widest uppercase mb-3">営業時間</p>
-                <p className="font-noto text-sm text-[#1d1d1f]">毎日 9:00〜17:00</p>
-                <p className="font-noto text-xs text-[#6e6e73] mt-1">年中無休</p>
+                <p className="font-noto text-sm text-[#1d1d1f]">月〜土 9:00〜17:00</p>
+                <p className="font-noto text-xs text-[#6e6e73] mt-1">年末年始除く</p>
               </div>
             </div>
           </div>
