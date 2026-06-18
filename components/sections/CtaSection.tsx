@@ -2,6 +2,7 @@
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import Button from '@/components/ui/Button'
+import container from '@/public/container.jpg'
 
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number]
 
@@ -9,9 +10,10 @@ export default function CtaSection() {
   return (
     <section className="relative py-32">
       <Image
-        src="/container.jpg"
+        src={container}
         alt=""
         fill
+        placeholder="blur"
         className="object-cover object-center"
       />
       <div className="absolute inset-0 bg-black/65" />

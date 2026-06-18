@@ -1,6 +1,7 @@
 'use client'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import excavator from '@/public/excavator.jpg'
 
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number]
 
@@ -29,9 +30,10 @@ export default function Features() {
   return (
     <section className="relative py-32">
       <Image
-        src="/excavator.jpg"
+        src={excavator}
         alt=""
         fill
+        placeholder="blur"
         className="object-cover object-center"
       />
       <div className="absolute inset-0 bg-black/75" />
@@ -52,11 +54,12 @@ export default function Features() {
           {features.map((feature, i) => (
             <motion.div
               key={feature.en}
-              className="bg-white/10 backdrop-blur-sm border border-white/20 p-10 flex flex-col gap-5"
+              className="bg-white/10 backdrop-blur-sm border border-white/20 p-10 flex flex-col gap-5 cursor-default"
               initial={{ opacity: 0, y: 80, scale: 0.92 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: false, margin: '-40px' }}
               transition={{ duration: 0.7, ease, delay: i * 0.18 }}
+              whileHover={{ y: -10, borderColor: 'rgba(255,255,255,0.45)', backgroundColor: 'rgba(255,255,255,0.18)', transition: { duration: 0.25, ease: 'easeOut' } }}
             >
               <span className="font-bebas text-4xl text-white/20 tracking-widest leading-none">
                 {feature.number}

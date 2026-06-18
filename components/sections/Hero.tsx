@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion'
 import Button from '@/components/ui/Button'
 import Image from 'next/image'
+import carCarrier from '@/public/car-carrier.jpg'
 
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number]
 
@@ -18,10 +19,11 @@ export default function Hero() {
     <section className="min-h-screen flex flex-col">
       <div className="relative flex-1 flex flex-col justify-center items-center text-center px-6 pt-14 min-h-screen">
         <Image
-          src="/car-carrier.jpg"
+          src={carCarrier}
           alt="車積載トラック"
           fill
           priority
+          placeholder="blur"
           className="object-cover object-center"
         />
         <div className="absolute inset-0 bg-black/55" />
@@ -75,22 +77,25 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-          <motion.span
-            className="font-noto text-xs text-white/40 tracking-widest"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.1, duration: 0.8 }}
+        {/* Bouncing scroll indicator */}
+        <motion.div
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.1, duration: 0.8 }}
+        >
+          <span className="font-noto text-xs text-white/40 tracking-widest">SCROLL</span>
+          <motion.svg
+            width="16"
+            height="24"
+            viewBox="0 0 16 24"
+            fill="none"
+            animate={{ y: [0, 8, 0] }}
+            transition={{ repeat: Infinity, duration: 1.6, ease: 'easeInOut' }}
           >
-            SCROLL
-          </motion.span>
-          <motion.span
-            className="block w-px bg-white/20"
-            initial={{ height: 0 }}
-            animate={{ height: 32 }}
-            transition={{ delay: 1.3, duration: 0.6 }}
-          />
-        </div>
+            <path d="M8 4 L8 20 M2 14 L8 20 L14 14" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          </motion.svg>
+        </motion.div>
       </div>
     </section>
   )

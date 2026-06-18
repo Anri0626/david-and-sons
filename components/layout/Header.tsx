@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
@@ -12,11 +12,22 @@ const navLinks = [
 
 export default function Header() {
   const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-[#d2d2d7]">
-      <div className="max-w-6xl mx-auto px-6 md:px-10 flex items-center justify-between h-14">
+    <header className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b border-[#d2d2d7] transition-all duration-300 ${
+      scrolled ? 'bg-white/97 shadow-sm' : 'bg-white/90'
+    }`}>
+      <div className={`max-w-6xl mx-auto px-6 md:px-10 flex items-center justify-between transition-all duration-300 ${
+        scrolled ? 'h-12' : 'h-14'
+      }`}>
         {/* Logo */}
         <Link href="/" className="font-bebas text-lg tracking-widest text-[#1d1d1f] hover:text-[#6e6e73] transition-colors">
           DAVID AND SON&apos;S
