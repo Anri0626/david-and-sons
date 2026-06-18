@@ -1,10 +1,13 @@
+'use client'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 import Button from '@/components/ui/Button'
+
+const ease = [0.22, 1, 0.36, 1] as [number, number, number, number]
 
 export default function CtaSection() {
   return (
     <section className="relative py-32">
-      {/* Background image */}
       <Image
         src="/container.jpg"
         alt=""
@@ -16,7 +19,12 @@ export default function CtaSection() {
       <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Left: copy */}
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.7, ease }}
+          >
             <p className="font-noto text-xs text-white/40 tracking-widest uppercase mb-4">お問い合わせ</p>
             <h2 className="font-bebas text-4xl md:text-5xl tracking-widest text-white leading-tight">
               まずはお気軽に<br />ご相談ください
@@ -28,10 +36,16 @@ export default function CtaSection() {
             <div className="mt-8">
               <Button variant="solid" href="/contact">フォームで問い合わせる</Button>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right: contact info */}
-          <div className="bg-white/10 backdrop-blur-sm border border-white/20 p-10">
+          <motion.div
+            className="bg-white/10 backdrop-blur-sm border border-white/20 p-10"
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.7, ease, delay: 0.15 }}
+          >
             <p className="font-noto text-xs text-white/40 tracking-widest uppercase mb-6">電話でのお問い合わせ</p>
             <a
               href="tel:09057818564"
@@ -54,7 +68,7 @@ export default function CtaSection() {
               <p className="font-noto text-xs text-white/40">所在地</p>
               <p className="font-noto text-sm text-white mt-1">千葉県佐倉市高崎944-1</p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

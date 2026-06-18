@@ -3,6 +3,7 @@ import './globals.css'
 import { bebasNeue, inter, notoSansJP } from '@/lib/fonts'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
+import PageTransition from '@/components/layout/PageTransition'
 
 export const metadata: Metadata = {
   title: {
@@ -31,7 +32,7 @@ export default function RootLayout({
     >
       <body className="bg-white text-[#0a0a0a] font-inter antialiased">
         <Header />
-        <main>{children}</main>
+        <main><PageTransition>{children}</PageTransition></main>
         <Footer />
       </body>
     </html>

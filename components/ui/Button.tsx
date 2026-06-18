@@ -10,7 +10,7 @@ type ButtonProps = {
   className?: string
 }
 
-const baseClass = 'inline-block font-noto text-sm transition-colors duration-200 cursor-pointer'
+const baseClass = 'inline-block font-noto text-sm transition-all duration-200 cursor-pointer hover:scale-[1.03] active:scale-[0.97]'
 
 const variantClass = {
   solid:   'bg-[#1d1d1f] text-white px-7 py-3 hover:bg-[#3d3d3f]',

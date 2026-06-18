@@ -1,4 +1,8 @@
+'use client'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
+
+const ease = [0.22, 1, 0.36, 1] as [number, number, number, number]
 
 const features = [
   {
@@ -24,7 +28,6 @@ const features = [
 export default function Features() {
   return (
     <section className="relative py-32">
-      {/* Background image */}
       <Image
         src="/excavator.jpg"
         alt=""
@@ -34,14 +37,27 @@ export default function Features() {
       <div className="absolute inset-0 bg-black/75" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-10">
-        <div className="mb-16 text-center">
+        <motion.div
+          className="mb-16 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.6, ease }}
+        >
           <p className="font-noto text-xs text-white/40 tracking-widest uppercase mb-3">サービスの特徴</p>
           <h2 className="font-bebas text-4xl md:text-6xl tracking-widest text-white">WHY CHOOSE US</h2>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {features.map((feature) => (
-            <div key={feature.en} className="bg-white/10 backdrop-blur-sm border border-white/20 p-10 flex flex-col gap-5">
+          {features.map((feature, i) => (
+            <motion.div
+              key={feature.en}
+              className="bg-white/10 backdrop-blur-sm border border-white/20 p-10 flex flex-col gap-5"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ duration: 0.65, ease, delay: i * 0.12 }}
+            >
               <span className="font-bebas text-4xl text-white/20 tracking-widest leading-none">
                 {feature.number}
               </span>
@@ -52,7 +68,7 @@ export default function Features() {
                 <p className="font-noto text-xs text-white/50 mt-1">{feature.ja}</p>
               </div>
               <p className="font-noto text-sm text-white/70 leading-relaxed">{feature.desc}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
