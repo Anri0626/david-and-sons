@@ -39,10 +39,10 @@ export default function Features() {
       <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-10">
         <motion.div
           className="mb-16 text-center"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: '-60px' }}
-          transition={{ duration: 0.6, ease }}
+          transition={{ duration: 0.7, ease }}
         >
           <p className="font-noto text-xs text-white/40 tracking-widest uppercase mb-3">サービスの特徴</p>
           <h2 className="font-bebas text-4xl md:text-6xl tracking-widest text-white">WHY CHOOSE US</h2>
@@ -53,10 +53,10 @@ export default function Features() {
             <motion.div
               key={feature.en}
               className="bg-white/10 backdrop-blur-sm border border-white/20 p-10 flex flex-col gap-5"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 80, scale: 0.92 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: false, margin: '-40px' }}
-              transition={{ duration: 0.65, ease, delay: i * 0.12 }}
+              transition={{ duration: 0.7, ease, delay: i * 0.18 }}
             >
               <span className="font-bebas text-4xl text-white/20 tracking-widest leading-none">
                 {feature.number}
