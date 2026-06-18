@@ -21,7 +21,7 @@ export default function CompanyTable() {
           className="flex flex-col sm:flex-row py-6 border-b border-[#d2d2d7] gap-2 sm:gap-12"
           initial={{ opacity: 0, x: -16 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: '-20px' }}
+          viewport={{ once: false, margin: '-20px' }}
           transition={{ duration: 0.5, ease, delay: i * 0.07 }}
         >
           <dt className="font-noto text-xs text-[#6e6e73] w-28 shrink-0 pt-0.5">{row.label}</dt>

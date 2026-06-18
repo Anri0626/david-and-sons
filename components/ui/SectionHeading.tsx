@@ -15,7 +15,7 @@ export default function SectionHeading({ en, ja, center = false }: Props) {
       className={`mb-12 ${center ? 'text-center' : ''}`}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-60px' }}
+      viewport={{ once: false, margin: '-60px' }}
       transition={{ duration: 0.6, ease }}
     >
       {ja && (

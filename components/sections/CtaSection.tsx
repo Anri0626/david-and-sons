@@ -22,7 +22,7 @@ export default function CtaSection() {
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
+            viewport={{ once: false, margin: '-60px' }}
             transition={{ duration: 0.7, ease }}
           >
             <p className="font-noto text-xs text-white/40 tracking-widest uppercase mb-4">お問い合わせ</p>
@@ -43,7 +43,7 @@ export default function CtaSection() {
             className="bg-white/10 backdrop-blur-sm border border-white/20 p-10"
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
+            viewport={{ once: false, margin: '-60px' }}
             transition={{ duration: 0.7, ease, delay: 0.15 }}
           >
             <p className="font-noto text-xs text-white/40 tracking-widest uppercase mb-6">電話でのお問い合わせ</p>

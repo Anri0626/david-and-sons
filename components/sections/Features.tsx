@@ -41,7 +41,7 @@ export default function Features() {
           className="mb-16 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
+          viewport={{ once: false, margin: '-60px' }}
           transition={{ duration: 0.6, ease }}
         >
           <p className="font-noto text-xs text-white/40 tracking-widest uppercase mb-3">サービスの特徴</p>
@@ -55,7 +55,7 @@ export default function Features() {
               className="bg-white/10 backdrop-blur-sm border border-white/20 p-10 flex flex-col gap-5"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-40px' }}
+              viewport={{ once: false, margin: '-40px' }}
               transition={{ duration: 0.65, ease, delay: i * 0.12 }}
             >
               <span className="font-bebas text-4xl text-white/20 tracking-widest leading-none">
